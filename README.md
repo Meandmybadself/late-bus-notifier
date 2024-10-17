@@ -17,6 +17,7 @@ A Cloudflare worker to notify in the event of a late bus in the Hopkins, MN scho
 
 
 ## Prompt
+Using Claude Sonnet 3.5
 
 ```
 Can you create a script for running a Cloudflare worker and supporting files (package.json, wrangler.toml, etc) that:
