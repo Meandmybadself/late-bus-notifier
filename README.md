@@ -3,6 +3,8 @@ A Cloudflare worker to notify in the event of a late bus in the Hopkins, MN scho
 
 ## Reference (for future me)
 
+* [Late Bus Log](https://docs.google.com/spreadsheets/u/0/d/1fjfYhwB9YThz2_O0ZTQzKqZDJdwXMjD8m3MjyfuFHNw/pub?single=true&gid=0&range=a1:e100&output=html&widget=false)
+* [Late Bus Log, as CSV](https://docs.google.com/spreadsheets/u/0/d/1fjfYhwB9YThz2_O0ZTQzKqZDJdwXMjD8m3MjyfuFHNw/pub?single=true&gid=0&range=a1:e100&output=csv)
 * [SendGrid settings](https://app.sendgrid.com/account/details)
 * [Cloudflare Worker Settings](https://dash.cloudflare.com/c3b373ae8a90a6494e520f962bdf462b/workers/services/view/bus-delay-notifier/production/settings)
 
