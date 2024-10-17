@@ -1,0 +1,19 @@
+{
+  "name": "bus-delay-notifier",
+  "version": "1.0.0",
+  "description": "Cloudflare Worker to notify about bus delays",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "wrangler dev src/index.js",
+    "deploy": "wrangler publish"
+  },
+  "author": "Jeffery Bennett <me@meandmybadself.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@sendgrid/mail": "^7.7.0",
+    "date-fns": "^2.29.3"
+  },
+  "devDependencies": {
+    "wrangler": "^2.0.0"
+  }
+}

@@ -1,0 +1,12 @@
+name = "bus-delay-notifier"
+main = "src/index.js"
+compatibility_date = "2023-05-18"
+
+[env.production]
+kv_namespaces = [
+  { binding = "KV", id = "Your_KV_Namespace_ID" }
+]
+
+[triggers]
+# Run every 5 minutes from 6:00 AM to 7:30 AM CST (12:00 to 13:30 UTC)
+crons = ["*/5 12-13 * * *"]
