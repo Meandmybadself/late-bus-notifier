@@ -16,7 +16,7 @@ importers:
         version: 2.30.0
     devDependencies:
       wrangler:
-        specifier: ^2.0.0
+        specifier: ^2.21.2
         version: 2.21.2(cron-schedule@3.0.6)
 
 packages:

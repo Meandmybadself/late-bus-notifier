@@ -5,11 +5,11 @@ const GOOGLE_SHEETS_DOC_URL = 'https://docs.google.com/spreadsheets/u/0/d/1fjfYh
 export default {
   fetch: async function(request, env) {
     const url = new URL(request.url);
-    const authToken = url.searchParams.get('auth_token') || request.headers.get('X-Auth-Token');
+    // const authToken = url.searchParams.get('auth_token') || request.headers.get('X-Auth-Token');
 
-    if (authToken !== env.AUTH_TOKEN) {
-      return new Response('Unauthorized', { status: 401 });
-    }
+    // if (authToken !== env.AUTH_TOKEN) {
+    //   return new Response('Unauthorized', { status: 401 });
+    // }
 
     await processData(env);
     return new Response('Processing triggered successfully', { status: 200 });
