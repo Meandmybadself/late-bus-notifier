@@ -3,22 +3,21 @@ import { parse } from 'date-fns';
 const GOOGLE_SHEETS_DOC_URL = 'https://docs.google.com/spreadsheets/u/0/d/1fjfYhwB9YThz2_O0ZTQzKqZDJdwXMjD8m3MjyfuFHNw/pub?single=true&gid=0&range=a1:e100&output=csv';
 
 export default {
-  async scheduled(event, env, ctx) {
+  fetch: async function(request, env) {
+    const url = new URL(request.url);
+    const authToken = url.searchParams.get('auth_token') || request.headers.get('X-Auth-Token');
+
+    if (authToken !== env.AUTH_TOKEN) {
+      return new Response('Unauthorized', { status: 401 });
+    }
+
     await processData(env);
+    return new Response('Processing triggered successfully', { status: 200 });
   },
 
-//   async fetch(request, env, ctx) {
-//     // Check for a specific header or query parameter for security
-//     const url = new URL(request.url);
-//     const authToken = url.searchParams.get('auth_token') || request.headers.get('X-Auth-Token');
-
-//     if (authToken !== env.AUTH_TOKEN) {
-//       return new Response('Unauthorized', { status: 401 });
-//     }
-
-//     await processData(env);
-//     return new Response('Processing triggered successfully', { status: 200 });
-//   }
+  async scheduled(event, env) {
+    await processData(env);
+  }
 };
 
 async function processData(env) {
