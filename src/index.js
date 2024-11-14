@@ -53,10 +53,10 @@ async function processData(env) {
 
   console.log('Fetching bus data');
   const busData = await fetchBusData();
+  console.log(`Fetched ${busData.length} rows of data`);
   console.log('Filtering bus data');
   const relevantData = filterBusData(busData, today, BUS_NUMBER);
-  console.log('Checking if relevant data exists');
-  console.log(relevantData.length);
+  console.log(`Found ${relevantData.length} rows of relevant data`);
 
   if (relevantData.length > 0) {
     console.log('Email not sent today, sending email');
