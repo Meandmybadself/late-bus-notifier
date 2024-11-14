@@ -2,6 +2,13 @@ name = "bus-delay-notifier"
 main = "src/index.js"
 compatibility_date = "2023-05-18"
 
+[vars]
+BUS_NUMBER = "712"
+TO_EMAIL_ADDRESSES = "a@gmail.com,b@gmail.com"
+FROM_EMAIL_ADDRESS = "registered-mailer@sendgrid.com"
+AUTH_TOKEN = "SECRET"
+SENDGRID_API_KEY = "SECRET"
+
 [env.production]
 kv_namespaces = [
   { binding = "KV", id = "Your_KV_Namespace_ID" }
@@ -10,3 +17,7 @@ kv_namespaces = [
 [triggers]
 # Run every 5 minutes from 6:00 AM to 7:30 AM CST (12:00 to 13:30 UTC)
 crons = ["*/5 12-13 * * *"]
+
+[observability]
+enabled = true
+head_sampling_rate = 1
