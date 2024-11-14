@@ -8,13 +8,13 @@ A Cloudflare worker to notify in the event of a late bus in the Hopkins, MN scho
 * [SendGrid settings](https://app.sendgrid.com/account/details)
 * [Cloudflare Worker Settings](https://dash.cloudflare.com/c3b373ae8a90a6494e520f962bdf462b/workers/services/view/bus-delay-notifier/production/settings)
 
-## Environment Variables (defined in [Cloudflare Worker Settings](https://dash.cloudflare.com/c3b373ae8a90a6494e520f962bdf462b/workers/services/view/bus-delay-notifier/production/settings))
+## Environment Variables (defined in wrangler.toml & [visible in Cloudflare settings](https://dash.cloudflare.com/c3b373ae8a90a6494e520f962bdf462b/workers/services/view/bus-delay-notifier/production/settings))
 
+* `AUTH_TOKEN`: A token for use in authenticating when accessing sevice via worker URL.
 * `TO_EMAIL_ADDRESSES`: A comma separated list of email addresses to send to
-* `FROM_EMAIL_ADDRESS`: An email address to send from
+* `FROM_EMAIL_ADDRESS`: An email address to send from, registered with SendGrid
 * `SENDGRID_API_KEY`: A SendGrid API key
 * `BUS_NUMBER`: The number of the bus to check for delays
-
 
 ## Prompt
 Using Claude Sonnet 3.5

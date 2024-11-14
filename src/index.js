@@ -53,7 +53,7 @@ async function processData(env) {
 
   console.log('Fetching bus data');
   const busData = await fetchBusData();
-  console.log(`Fetched ${busData.length} rows of data`);
+  console.log(`Fetched ${busData.length} rows of data with headers: ${busData[0]}`);
   console.log('Filtering bus data');
   const relevantData = filterBusData(busData, today, BUS_NUMBER);
   console.log(`Found ${relevantData.length} rows of relevant data`);
